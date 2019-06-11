@@ -1,0 +1,27 @@
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+.active{
+  background-color: rgb(200, 200, 200);
+}
+.DaNumbazz {
+  background-color: rgb(241, 241, 241);
+  color:#000;
+  max-width:800px;
+  margin: 100px auto 0;
+  text-align: center;
+  display: flex;
+}
+
+.counter-value {
+  display: table-cell;
+  margin:1.5%;
+  font-size:50px;
+  background-color: rgb(241, 241, 241);
+  vertical-align: middle;
+}
+.azCommentaire{
+  font-size : 1.25em;
+}

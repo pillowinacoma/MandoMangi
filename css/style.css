@@ -1,0 +1,132 @@
+body{
+	color: #fee9fc;
+	background-color: rgb(217,205,145);
+}
+
+.navbar a {
+	color: #000/*rgb(217,205,145);*/
+	font-weight: bold;
+	text-decoration: none;
+}
+.navbar a:visited {
+	color: rgb(220,215,150);
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.logo_home {
+	padding:0em;
+	margin : 0em;
+	text-align:center;
+	position: relative;
+}
+
+.logo_home img { /*img remplacer par canvas*/
+	width:90%;
+	margin:Oem;
+	padding:0em;
+	display: none;/*j'ai ajouté ça pour que je remplace par le canvas*/
+}
+
+.logo_home canvas{/*LE canvas*/
+	padding:0em;
+	margin: 0em;
+	text-align:center;
+	position: relative;
+}
+
+.navbar {
+	max-width:1000px;
+	padding:0px 0px 0px 0px;
+	margin:0em auto;
+	position:relative;
+	z-index:10;
+}
+.navbar ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: rgb(217,159,108);
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar li a {
+    display: block;
+    color: #fee9fc;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar li a:hover:not(.active) {
+    background-color: rgb(64,20,44);
+}
+
+.navbar .active {
+    background-color: rgb(166,60,60);
+}
+
+.button {
+    background-color: #8B0000;
+    border: none;
+    color: #fee9fc;
+    padding: 15px 32px;
+		margin : 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+		cursor: pointer;
+	}
+
+	.button:hover {
+		background-color: #6f0000;
+	}
+
+.container {
+	max-width:1000px;
+	padding:0px 0px 0px 0px;
+	margin:0em auto;
+	position:relative;
+
+  background-color: #333;
+  box-shadow:black 0px 5px 10px;
+  display: block;
+
+}
+.cadre{
+  border-style: solid;
+  border-width: 2px;
+  border-color: #fee9fc;
+
+	max-width:1000px;
+	padding:2%;
+	margin:1em auto;
+	position:relative;
+}
+.post img {
+	max-height: 300px;
+	max-width: 250px;
+	margin:Oem;
+	padding:0em;
+	position:relative;
+}
+.post table {
+	max-width: 70%;
+}
+.post {
+	display: inline-flex;
+}
+
+.footer {
+	 position:relative;
+ 	 background-color: rgb(217,159,108);
+	 text-align: center;
+	 max-width:1000px;
+	 margin:0em auto;
+	 z-index:10;
+}
