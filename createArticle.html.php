@@ -22,10 +22,17 @@
           <p><textarea name="article" class="w3-input w3-padding-16" placeholder="Article" required rows="8" cols="80" style="resize : none;overflow : auto;">
             <?php if(isset($_POST['article'])) echo $_POST['article'];?>
           </textarea></p>
-          <input name="img" type="file" id="file" style="display: none;" />
-          <input class="w3-button w3-light-grey" type="button" value="Charger une image" title="importe une image" onclick="document.getElementById('file').click();" />
-          <input class="w3-button w3-light-grey" type="submit" name="enregistrement" value="Envoyer">
-          <input  class="w3-button w3-light-grey" type="reset" name="annuler" value="Annuler">
+          <script type="text/javascript">
+            function imgSelect(){
+              document.getElementsByName('img')[0].style.display = 'block';
+              document.getElementsByName('imgLink')[0].style.display = 'block';
+            }
+          </script>
+          <p><input name="img" type="file" id="file" style="display: none;" class="w3-input w3-padding-16" /></p>
+          <p><input type="text" name="imgLink" style="display: none;" class="w3-input w3-padding-16"></p>
+          <input class="w3-button w3-light-grey" type="button" value="Charger une image" title="importe une image" onclick="imgSelect();" />
+          <input class="w3-button w3-light-grey" type="submit" name="enregistrement" value="Enregistrer">
+          <input class="w3-button w3-light-grey" type="reset" name="annuler" value="Annuler">
         </form>
       </div>
 

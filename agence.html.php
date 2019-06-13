@@ -13,15 +13,42 @@
 	<!-- Navbar (sit on top) -->
 	<?php	$title = "agence"; 	include 'navbar.php';?>
 
-	<!-- Footer -->
-	<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
-	  <i class="fa fa-facebook-official w3-hover-opacity"></i>
-	  <i class="fa fa-instagram w3-hover-opacity"></i>
-	  <i class="fa fa-snapchat w3-hover-opacity"></i>
-	  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-	  <i class="fa fa-twitter w3-hover-opacity"></i>
-	  <i class="fa fa-linkedin w3-hover-opacity"></i>
-	</footer>
+	<div class="w3-content" style="max-width:1100px">
+
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
+      <div class="w3-row w3-padding-32">
+
+						<div class="w3-quarter box">
+	          <a href="Mandomangi.html.php">
+							<img src="img/103-2592x1936.jpg" class="sw3-margin-bottom postcardy" id="Mando" style="width:100%;height: 80vh;object-fit: cover">
+					    <div class="text" onmouseover="document.getElementById('Mando').classList.add('blurryImg');" onmouseleave="document.getElementById('Mando').classList.remove('blurryImg');">Mandomangi</div>
+						</a>
+
+				</div>
+						<div class="w3-quarter box">
+	          <a href="Events.html.php">
+							<img src="img/1003-1181x1772.jpg" class="sw3-margin-bottom postcardy" id="Events" style="width:100%;height: 80vh;object-fit: cover">
+					    <div class="text" onmouseover="document.getElementById('Events').classList.add('blurryImg');" onmouseleave="document.getElementById('Events').classList.remove('blurryImg');">Evenements</div>
+						</a>
+				</div>
+						<div class="w3-quarter box">
+	          <a href="Service.html.php">
+							<img src="img/1025-4951x3301.jpg" class="sw3-margin-bottom postcardy" id="Services" style="width:100%;height: 80vh;object-fit: cover">
+					    <div class="text" onmouseover="document.getElementById('Services').classList.add('blurryImg');" onmouseleave="document.getElementById('Services').classList.remove('blurryImg');">Services</div>
+						</a>
+        	</div>
+					<div class="w3-quarter box">
+						<a href="Presse.html.php">
+							<img src="img/1024-1920x1280.jpg" class="sw3-margin-bottom postcardy" id="Presse" style="width:100%;height: 80vh;object-fit: cover">
+							<div class="text" onmouseover="document.getElementById('Services').classList.add('blurryImg');" onmouseleave="document.getElementById('Services').classList.remove('blurryImg');">Presse</div>
+						</a>
+					</div>
+				</div>
+
+				 </div>
+  </div>
+
+	<?php include 'footer.php' ;?>
 
 	</body>
 	</html>
