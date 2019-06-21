@@ -79,7 +79,9 @@
           </header>
 
         <div class=\"w3-container w3-content w3-center w3-padding-64\" style=\"max-width:800px\" id=\"".$_POST['titre']."\">
-          <p class=\"w3-justify\"><?php echo(str_replace(array(\"\\n\",'".'"'."'),array(\"<br>\",'".'\"'."'),\"".$_POST['article']."\"))?>
+          <p class=\"w3-justify\"><?php \$text = (str_replace(array(\"\\n\"),array(\"<br>\"),'".addslashes($_POST['article'])."'));
+            echo stripslashes(\$text);
+          ?>
           </p>
         </div>
 
