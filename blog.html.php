@@ -8,6 +8,8 @@
 	<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
 	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 	<link rel="stylesheet" href="css/stylesheet.css">
+	<script type="text/javascript" src="js/blogScripts.js"></script>
+	<script type="text/javascript" src="lib/jquery.js"></script>
 </head>
 <body>
 	<!-- Navbar (sit on top) -->
@@ -15,11 +17,20 @@
 	include 'navbar.php';
 	include 'functions.php';
 	?>
-	<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
 	<?php
-		createBlog();
+	$websiteUrl = isset($_POST['source'])?$_POST['source']:'http://guide.mandomangi.com/tips-articles';
+	echo "<script type=\"text/javascript\">
+	console.log(\"$websiteUrl\");
+	</script>";
+	?>
+	<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px" id="he">
+	<?php
+		createBlog($websiteUrl);
 	?>
 	</div>
+
+	<?php include 'footer.php' ;?>
+
 
 </body>
 </html>

@@ -1,0 +1,281 @@
+{>"layout" /}
+
+{<body}
+<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#formModal">
+  Ajouter restaurant
+</button>
+  <br>
+  {#datas}
+    <p>{error}</p>
+  {/datas}
+
+  <br>
+  {#datas}
+    {#resto}
+      <div class="well">
+      <h4>{title}
+        <button class="btn btn-default pull-right" data-toggle="collapse" href="#resteaurant_{id}" role="button" aria-expanded="false" aria-controls="resteaurant_{id}">
+          <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+        </button>
+      </h4>
+        <div class="collapse" id="resteaurant_{id}">
+          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+              {#datas}
+                {#Images}
+
+                {@eq key=imgId value="{id}"}
+                  <div class="item" >
+                    <img src="/img/{imgName}" style="width:100%;height:20vh;  object-fit: cover;">
+                  </div>
+                  {/eq}
+
+                {/Images}
+              {/datas}
+            </div>
+          </div>
+          <p>{content}</p>
+          <p>{region}</p>
+          <p>{categorie}</p>
+          <p>{adresse}</p>
+          <p>{phone}</p>
+          <p>{website}</p>
+          <button
+          class="btn btn-default edit-resto"
+          data-toggle="modal"
+          data-target="#editFormModal"
+          data-id="{id}"
+          data-title="{title}"
+          data-content="{content}"
+          data-region="{region}"
+          data-categorie="{categorie}"
+          data-adresse="{adresse}"
+          data-phone="{phone}"
+          data-website="{website}"
+          >
+          <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+          </button>
+          <button class="btn btn-default add-plat" data-toggle="modal" data-target="#formModalPlat" data-id="{id}">
+            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+          </button>
+          <button class="btn btn-default add-photo" data-toggle="modal" data-target="#ajouterPhoto" data-id="{id}">
+            <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+          </button>
+          <button class="btn btn-danger delete-resto" data-id="{id}">
+          <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    {/resto}
+  {/datas}
+
+
+  <!-- Ajouter Restau Model -->
+  <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <form method="post" action="/add">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ajouter restaurant</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label>title</label>
+              <input type="text" class="form-control" name="title">
+            </div>
+            <div class="form-group">
+              <label>content</label>
+              <textarea class="form-control" name="content" id="content" rows="8" cols="80"></textarea>
+            </div>
+            <div class="form-group">
+              <label>region</label>
+              <input type="text" class="form-control" name="region">
+            </div>
+            <div class="form-group">
+              <label>categorie</label>
+              <input type="text" class="form-control" name="categorie">
+            </div>
+            <div class="form-group">
+              <label>adresse</label>
+              <input type="text" class="form-control" name="adresse">
+            </div>
+            <div class="form-group">
+              <label>phone</label>
+              <input type="text" class="form-control" name="phone">
+            </div>
+            <div class="form-group">
+              <label>website</label>
+              <input type="text" class="form-control" name="website">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <input type="submit" class="btn btn-primary" value="Save">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modifier Restau Model -->
+  <div class="modal fade" id="editFormModal" tabindex="-1" role="dialog" aria-labelledby="editFormModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <form method="post" action="/edit">
+          <input type="hidden" id="edit-form-id" name="id">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ajouter restaurant</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label>title</label>
+              <input type="text" class="form-control" name="title" id="edit-form-title">
+            </div>
+            <div class="form-group">
+              <label>content</label>
+              <textarea class="form-control" name="content" id="edit-form-content" rows="8" cols="80"></textarea>
+            </div>
+            <div class="form-group">
+              <label>region</label>
+              <input type="text" class="form-control" name="region" id="edit-form-region">
+            </div>
+            <div class="form-group">
+              <label>categorie</label>
+              <input type="text" class="form-control" name="categorie" id="edit-form-categorie">
+            </div>
+            <div class="form-group">
+              <label>adresse</label>
+              <input type="text" class="form-control" name="adresse" id="edit-form-adresse">
+            </div>
+            <div class="form-group">
+              <label>phone</label>
+              <input type="text" class="form-control" name="phone" id="edit-form-phone">
+            </div>
+            <div class="form-group">
+              <label>website</label>
+              <input type="text" class="form-control" name="website" id="edit-form-website">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <input type="submit" class="btn btn-primary" value="Save">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<!-- selectionner Plat Model -->
+<div class="modal fade" id="formModalPlat" tabindex="-1" role="dialog" aria-labelledby="PlatFormModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <form method="post" action="/selectPlat">
+        <input type="hidden" name="idResteau" id="add-plat-id">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ajouter un plat</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>Plat existant</label>
+            <select class="selectpicker form-control" name="idPlat">
+            {#datas}
+              {#plats}
+              <option value="{id}">
+                {title}
+              </option>
+              {/plats}
+            {/datas}
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Prix</label>
+            <input type="text" class="form-control" name="prix">
+          </div>
+          <div class="form-group">
+            <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#ajouterUnNouveauPlat">
+              Ajouter un plat
+            </button>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <input type="submit" class="btn btn-primary" value="Save">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Ajouter Plat Model -->
+<div class="modal fade" id="ajouterUnNouveauPlat" tabindex="-1" role="dialog" aria-labelledby="ajouterPlatFormModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <form method="post" action="/addPlat">
+          <input type="hidden" name="idResteau" id="add-new-plat-id">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ajouter restaurant</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label>Nom du plat</label>
+              <input type="text" class="form-control" name="title">
+            </div>
+            <div class="form-group">
+              <label>Ingredients</label>
+              <textarea class="form-control" name="content" id="content" rows="8" cols="80"></textarea>
+            </div>
+            <div class="form-group">
+              <label>Prix</label>
+              <input type="text" class="form-control" name="prix">
+            </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <input type="submit" class="btn btn-primary" value="Save">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Ajouter Photo -->
+<div class="modal fade" id="ajouterPhoto" tabindex="-1" role="dialog" aria-labelledby="ajouterPlatFormModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <form action="/imgUpload" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="photoRestoId" id="photoRestoId" value="">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ajouter Photo</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="file-field input-field">
+              <div class="btn grey">
+                <input name="resto" type="file">
+              </div>
+            </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <input type="submit" class="btn btn-primary" value="Save">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{/body}

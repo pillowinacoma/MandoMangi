@@ -46,7 +46,7 @@
 					require './PHPMailer/src/SMTP.php';
 
 					$errors = '';
-					$myemail = 'com.mandomangi@gmail.com';
+					$myemail = 'abdelazizsbaai@gmail.com';
 					if (empty($_POST['Nom'])||empty($_POST['Prenom'])||empty($_POST['Nom'])||empty($_POST['Message'])) {$errors .= '\n veillez remplir tout les champs';}
 					$nom = $_POST['Nom'];
 					$prenom = $_POST['Prenom'];
@@ -68,11 +68,11 @@
 						$mail->Password = '@Mandomangistartup2019';
 						$mail->SetFrom('noReply@mandomangi.com');
 						$mail->Subject = "vous avez eu un message de la part de: $nom $prenom";
-						$mail->Body = "Nouveau message recu".
-						"Nom : $nom\n".
-						"Prenom : $prenom\n".
-						"Email : $addMail\n".
-						"Message : $message :\n";
+						$mail->Body = "Nouveau message recu<br>".
+						"Nom : $nom<br>".
+						"Prenom : $prenom<br>".
+						"Email : $addMail<br><br>".
+						"Message : $message :<br>";
 						$mail->AddAddress($myemail);
 
 						if ($mail->Send()){

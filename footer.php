@@ -6,3 +6,12 @@
   <a href="https://twitter.com/mandomangi"><i class="fa fa-twitter w3-hover-opacity"></i></a>
   <a href="https://www.linkedin.com/company/mandomangi/?originalSubdomain=it"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
 </footer>
+<footer class="w3-container w3-padding-32 w3-center w3-opacity w3-grey">
+  <a href="http://guide.mandomangi.com/foire-aux-questions/">Foire au questions</a>
+   &#9672
+  <a href="http://guide.mandomangi.com/mentions-legales/">Mentions légales</a>
+   &#9672
+  <a href="http://guide.mandomangi.com/credits/">Crédits</a>
+   &#9672
+  <a href="http://guide.mandomangi.com/mc4wp-form-preview/">Newsletter</a>
+</footer>
